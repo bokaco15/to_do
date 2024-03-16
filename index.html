@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spisak obaveza</title>
+
+    <style>
+        :root{
+            --pozadina: rgb(242, 232, 220);
+            --bela: #fff;
+        }
+
+        body{
+            background-color: var(--pozadina);
+        }
+
+        h1{
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .dodajObavezu{
+            width: 300px;
+            margin: 0px auto 0px auto;
+        }
+
+        .obaveze{
+           display: flex;
+           justify-content: space-between;
+           margin-bottom: 20px;
+        }
+        #btn {
+            width: 120px;
+            height: 35px;
+            background-color: var(--bela);
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+
+        #btn:hover{
+            background-color: var(--pozadina);
+            transition: 0.5s;
+        }
+
+        #spisak{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            width: 300px;
+        }
+
+        .obaveza{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            column-gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.254);
+        }
+
+        .obaveza:nth-child(even){
+            width: 100%;
+            word-break: break-all;
+        }
+        .obaveza:nth-child(odd){
+            width: 100%;
+            word-break: break-all;
+        }
+
+        .btnDel{
+            width: 30px;
+            background-color: var(--bela);
+            height: 30px;
+            border: 1px solid black;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        .btnDel:hover{
+            background-color: var(--pozadina);
+            transition: 0.5s;
+        }
+
+
+        @media(max-width:768px){
+            h1{
+                font-size: 42px;
+            }
+        }
+
+        @media(max-width:414px){
+            h1{
+                font-size: 32px;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>Lista obaveza</h1>
+
+    <div class="dodajObavezu">
+    
+    <div class="obaveze">
+    <input type="text" id="unos" placeholder="Dodaj obavezu">
+    <button type="button" id="btn">Dodaj!</button>
+
+    </div>
+
+    <div id="spisak"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
